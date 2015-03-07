@@ -1,0 +1,451 @@
+@charset "utf-8";
+/* css Document */
+
+
+* {
+    -webkit-box-sizing: border-box;
+    text-decoration:none;
+
+}
+
+a{
+
+    text-decoration:none;
+    
+}
+a:hover{
+
+    text-decoration:none;
+}
+
+@font-face {
+    font-family: 'AtentoTouch';
+    src: url('Fonts/TheSansB-W5Plain.eot'); /* Para Internet Explorer */
+    src: local('AtentoTouch'), /* Para el resto de navegadores */
+        url('Fonts/TheSansB-W5Plain.otf') format('truetype');
+}
+
+
+
+body {
+    width: 1024px;
+    margin: auto;
+
+}
+header {
+    padding:0;
+    height:80px;
+    margin-bottom:25px;
+    background-color: rgb(41,62,107);
+    border-radius: 0px 0px 20px 20px;
+    box-shadow:
+        0px 3px 11px rgba(000, 000, 000, 0.5), inset 0px 0px 1px rgba(232, 225, 231, 1);
+}
+
+#paraima {
+    padding:10px;
+    margin: 100px 10px 10px 10px;
+    height:auto;
+
+
+    border-radius: 0px 0px 20px 20px;
+    box-shadow:
+        0px 3px 11px rgba(000, 000, 000, 0.5), inset 0px 0px 1px rgba(232, 225, 231, 1);
+}
+figure {
+    float: left;
+    width:auto;
+    height:auto;
+    margin-top:5px;
+    margin-left:10px;
+    margin-right:10px;
+}
+figure a {
+    text-decoration:none;
+    margin-left:0px;
+    margin-right:0px;
+    text-decoration:none;
+}
+figure a:hover {
+    padding-bottom:5px;
+}
+figcaption {
+    float: left;
+}
+figcaption h1 {
+    color: rgb(255,121,0);
+    text-align:left;
+    font-size: 1.5em;
+    margin-top: 35px;
+}
+nav {
+    
+    width: 800px;
+    height:auto;
+    float: left;
+    padding-left: 5%;
+      padding-right: 5%;
+   
+text-align: center;
+}
+nav a {
+
+    float: left;
+    background-color: rgb(41,62,107);
+    text-align:left;
+    text-decoration: none;
+    color: #FFF;
+    border-radius: 10px 0px 20px 0px;
+    transition: all 0.8s;
+
+
+
+    margin: 0px;
+    padding-top: 58px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    font-size: 14px;
+    border-bottom: hidden;
+    box-shadow:  0px 3px 0.5px rgba(000, 000, 000, 0.5), inset 0px 0px 1px rgba(232, 225, 231, 1);
+
+}
+
+nav a:hover {
+
+    background-color: rgb(255,121,0);
+    padding-top: 65px;
+    padding-bottom: 17px;
+
+}
+
+#contenido {	
+
+    overflow: hidden;
+    box-shadow: 0px 3px 11px rgba(000, 000, 000, 0.5), inset 0px 0px 1px rgba(232, 225, 231, 1);
+    min-height:200px;
+    border-radius: 9px ;
+    margin-top:6px;
+    margin-bottom:20px;
+    padding: 7px;
+}
+
+#contenido1 {	
+
+    overflow: hidden;
+    box-shadow: 0px 3px 11px rgba(000, 000, 000, 0.5), inset 0px 0px 1px rgba(232, 225, 231, 1);
+    min-height:200px;
+    border-radius: 9px ;
+    padding: 10px;
+    margin-top:10px;
+    margin-bottom:20px;
+    padding: 15px;
+    width: 35%;
+    margin-left: 15px;
+}
+
+
+#submenu{
+
+    margin-top:20px;
+    width: auto;	
+    margin-left: 0px;
+
+
+}
+#submenu a{
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 10px 20px;
+    background:#FFF;
+    color:rgb(41,62,107);
+    float:left;
+    font-size:12px;
+}
+#submenu a:hover{
+    background-color:rgb(255,121,0);
+}
+
+#logeo {
+
+    text-align: center;
+    float: right;
+    color: #FFF;
+    font-weight: normal;
+    font-family: Tahoma, Geneva, sans-serif;
+    line-height: 1px;
+    margin-right: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+#logeo2 {
+
+    float: right;
+    padding-top: 10px;
+    color:white;
+    padding-right: 10px;
+    font-size: 10px;
+}
+
+#logeo a {
+    text-decoration:none;
+    color: #FFF;
+}
+#Aleta{
+
+    float: right;
+
+    font-size: 10px;
+}
+
+#panel {
+    width: 220px;
+    height: 50px;
+    background-color: rgb(255,121,0);
+    position: fixed;
+    top: 25%;
+    right: -180px;
+    border-radius: 10px 0 0 0; 
+    transition: all 1s;
+}
+#panel:hover {
+    right: 0px;
+
+    background-color: rgb(41,62,107);
+
+}
+#TituloIn{
+    color:#FFF;
+    text-align:center;
+    font-size:25px;
+    padding:15px;
+    font-weight: bold;
+}
+
+
+
+#image_index{
+    float: left;
+    padding:0px;
+    margin:20px 0px 0px 20px;
+    width:416px;
+    height:388px;
+    border-radius: 9px;
+    box-shadow: 0px 3px 11px rgba(000, 000, 000, 0.5), inset 0px 0px 1px rgba(232, 225, 231, 1);
+    background-image: url(../imagenes/Indexx.jpg);
+    background-repeat:no-repeat;
+    background-position:left;		
+}
+footer {
+
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    left: 0px;
+    background-color: rgb(41,62,107);
+
+    color: #FFF;
+    text-align:center;
+}
+#contenido h2{
+    padding-top:20px;
+    width:15%;
+    float:left;
+    color: rgb(41,62,107);
+    margin:10px;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:22px;
+
+}
+#Login{
+
+    float: right;
+    width:300px;
+    min-height:200px;
+    margin-left:100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    padding:15px;
+
+    box-shadow: 0px 3px 11px rgba(000, 000, 000, 0.1), inset 0px 0px 0.5px rgba(232, 225, 231, 1);
+}
+#forModal{
+ 
+    width:500px;
+    min-height:200px;
+    margin-left:20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding:15px;
+
+    box-shadow: 0px 3px 11px rgba(000, 000, 000, 0.1), inset 0px 0px 0.5px rgba(232, 225, 231, 1);
+
+
+
+}
+#miFormulario h4{
+    color:rgb(41,62,107);
+    font-size:12px;
+}
+form h4{
+    color:rgb(41,62,107);
+    text-decoration: blink;
+
+}
+
+#contenido h4{
+    padding-top:5px;
+    text-align: center;
+    font-size:18px;
+ color:rgb(41,62,107);
+text-shadow: initial;
+}
+
+#cabezaindex{
+    clear: both;/* rOMPE LOS FLOTANTES*/
+
+    margin-top:0px;
+}
+
+#ContenidoInterno{
+    width:60%;
+    min-height:200px;
+    float:left;
+    padding:20px;
+    margin-left:20px;
+    margin-top:5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
+}
+
+#ContenidoInterno5{
+    width:60%;
+    min-height:200px;
+    float:none;
+    padding:20px;
+    margin-left:20px;
+    margin-top:5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
+}
+
+#ContenidoInterno3{
+    width:90%;
+    min-height:200px;
+    float:left;
+    padding:20px;
+    margin-left:20px;
+    margin-top:5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
+}
+
+#ContenidoInterno2{
+    width:70%;
+    min-height:200px;
+    float:left;
+    padding:20px;
+    margin-left:20px;
+    margin-top:10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
+}
+
+#ContenidoInterno4{
+    width:95%;
+    min-height:200px;
+    float:left;
+    padding:20px;
+    margin-left:20px;
+    margin-top:10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
+}
+
+#InfoImportante
+{
+    width:35%;
+    min-height:300px;
+    float:right;
+    padding:20px;
+    background-color:rgb(41,62,107);
+    margin:10px;
+    margin-top:0px;
+    margin-right:20px;	
+    box-shadow: 0px 3px 11px rgba(000, 000, 000, 0.5), inset 0px 0px 1px rgba(232, 225, 231, 1);
+
+}
+
+#GraficaResul
+{
+
+    width:25%;
+    min-height:300px;
+    float:right;
+    padding:10px;
+    background-color:rgb(255,255,255);
+    margin:10px;
+    margin-top:10px;
+    margin-right:20px;	
+
+
+
+
+}
+
+label {
+    display: block;
+}		
+
+#ConAste::after{
+    content:"*";
+    color:red;
+    padding: 5px;
+}
+label.error {
+
+    position: absolute;
+    color: rgb(00, 00, 00);
+
+    font-style: italic;
+    font-weight: normal;
+    font-size: 10px;
+    text-align: left;
+    /*background-color: #F00;*/
+    border-radius: 2px 0px 2px 0px  ;
+    padding: 1px;
+    margin-top: -40px;
+    margin-left: 20px;
+    background-color: rgba(235, 70, 000, 0.5);
+    font-weight:  700;
+}
+input.error{
+    background-color: #FEE;
+    border-color: #933;
+}
+input.valid{
+    background-color: #EFE;
+    border-color: #393;
+}	
+
+#bg-info{
+    color: #FFF;
+    text-align: center;
+     border-radius: 10px   ;
+    background-color: rgb(235, 70, 000);
+    margin: 10px;
+    padding: 2px;
+    
+}
+
+.confirmarOK {
+font-size: 1.2em;
+color: green;
+font-weight: bold;}
+
+.fontWi {
+font-size: 1.2em;
+font-weight: bold;
+
+}
