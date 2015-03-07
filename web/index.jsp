@@ -27,7 +27,7 @@
             <div id ="image_index"> 
 
                 <div id = "paraima">
-                    <p class = "Lead">Sistema de información diseñado para optimizar los ingresos del Call Center, otorgándole el control total de los ingresos de su empresa.</p>
+                    <p class = "Lead">Now you can have a control, make better, take desicions and do comprehensive business management about your incomes with CTRL+G management information system. It modules of Billable Items and the Goals allows that you have a detalied follow up  of each one. With it generator of reports you have updated and reliable information ensuring take professional descicions. Also you receive alerts in your mail for attack critical points that endanger your incomes..</p>
 
                 </div> 
             </div>
