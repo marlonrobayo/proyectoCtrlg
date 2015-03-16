@@ -15,25 +15,25 @@
     </head>
     <body>
         <header>
-            <figure> <a href= "index.html"> <img src="imagenes/logo.png" alt="logo" /></a> </figure>
-            <figcaption> <a href= "Inicio.html">
+            <figure> <a href= "index.jsp"> <img src="imagenes/logo.png" alt="logo"/></a> </figure>
+            <figcaption> <a href="index.jsp">
                     <h1>Ctrl+G</h1>
                 </a> </figcaption>
             <div id= "logeo2">
                 <h2>Control De Gestión</h2>
             </div>
         </header>
-        <div id= "contenido">
+        <div id= "contenido">            
             <div class="collapse alert alert-warning alert-dismissible fade" role="alert"  id="myModal"  tabindex="-1" role="dialog" aria-labelledby="myModal1" aria-hidden="true" >
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <strong>Atencion!</strong> No se ha registrado la información por favor verifique los campos del formulario.
             </div>
-            <div class="row">
-            <div class="col-md-12">
-            <h3>Formulario Solicitud de Acceso</h3>
-            <h5>Por favor diligencie los datos lo estaremos contactandon para confirmar acceso</h5>
-            </div></div>
-            <div id = "ContenidoInterno">
+            <div>
+            <center>    
+            <h3 class="text-primary">Formulario Solicitud de Acceso</h3>
+           </center>
+           </div>             
+          <div id = "ContenidoInternoSolicitud">
                 <form id="FormularioRgistro" role="form" method="get" action="index.jsp"> 
                      <div id="Aleta"><span style="color:red;font-size: 16px;" > *</span> Campos obligatorios</div> 
                      <br>
@@ -49,17 +49,16 @@
                                 <input class="form-control" type="email" placeholder="callcentercsc.com" disabled tabindex="2" required="">
                             </div>
                         </div>
+                         <div class="form-group">
+                        <label  id="ConAste" for="name1">Nombre y Apellidos</label>
+                        <input type="text" class="form-control" id="name1" name="name1" placeholder="Su nombres y apellidos" tabindex="2" requiered="">
+                        </div>
                         <div class="form-group">
                             <label id = "ConAste" for="Clave">Identificación personal</label>
-                            <input type="text" class="form-control" id="Clave" name = "clave" placeholder="numero de cedula" tabindex="3" required="" >
+                            <input type="text" class="form-control" id="Clave" name = "clave" placeholder="Número de cédula" tabindex="3" required="" >
                         </div>
                         <div class="form-group">
-                            <label id = "ConAste"  for="telefono">Extensión</label>
-                            <input type="text" class="form-control" id="telefono" name = "telefono" placeholder="numero de cedula" tabindex="4" required="" >
-                        </div>
-
-                        <div class="form-group">
-                            <label id = "ConAste"  for="celular">Numero Celular</label>
+                            <label id = "ConAste"  for="celular">Número Celular</label>
                             <input type="text" class="form-control" id="celular" name = "celular" placeholder="3102408796" tabindex="5" required="" >
                         </div>
                          <div class="form-group">
@@ -77,12 +76,12 @@
                         </select>
                     </div>
                     </div>
-                    <p></p>
+                         <div class="space"><br><br></div>
                     <button type="submit" class="btn btn-primary" data-toggle="collapse"   href=".alert-success" data-target="#myModal" tabindex="6" >Solicitar</button>
                 </form>
-            </div>
+            </div>                 
         </div>
-    </body>
+    </center> 
     <footer>Âño 2014 Ctrl+G - proyecto formativo</footer>
     <script>
         $().ready(function () {
@@ -97,11 +96,6 @@
                 }
             });
         });
-
-
-
     </script>
-
-
-
+ </body>
 </html>
