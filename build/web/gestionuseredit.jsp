@@ -114,7 +114,7 @@
                             PersonasDAO listc2 = new PersonasDAO();                         
                             
                      %>                       
-<table class="table table-bordered" id="listarpersonas">
+<table class="table table-bordered table-condensed table-hover" id="listarpersonas">
                             <tr>
                                 <th>ID Persona</th>
                                 <th>Nombre Completo</th>

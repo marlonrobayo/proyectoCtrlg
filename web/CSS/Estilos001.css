@@ -321,12 +321,9 @@ text-shadow: initial;
 
 #ContenidoInterno5{
     width:60%;
-    min-height:200px;
-    float:none;
-    padding:20px;
-    margin-left:20px;
-    margin-top:5px;
-    margin-bottom: 20px;
+    min-height:250px;
+    padding:14px;
+    margin-bottom:30px;
     box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
 }
 
@@ -346,17 +343,14 @@ text-shadow: initial;
     min-height:200px;
     float:left;
     padding:20px;
-    margin-left:20px;
-    margin-top:10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
 }
 
 #ContenidoInterno4{
     width:95%;
-    min-height:200px;
-    float:left;
-    padding:20px;
+    min-height:250px;
+    padding:14px;
     margin-left:20px;
     margin-top:10px;
     margin-bottom: 20px;

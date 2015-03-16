@@ -96,7 +96,7 @@
                             RolesDAO listc1 = new RolesDAO();
                             ArrayList<RolesDTO> listaRoles = listc1.listarRoles();
                      %>
-<table class="table table-striped table-bordered table-hover table-condensed" id="listarpersonas">
+<table class="table table-bordered table-condensed table-hover" id="listarpersonas">
                             <tr>
                                 <th>ID Rol</th>
                                 <th>Rol</th>
