@@ -6,6 +6,7 @@ package TestProyect;
  * and open the template in the editor.
  */
 
+
 import Dto.RolesDTO;
 import Modelo.RolesDAO;
 import Utilidades.MyErrorExcepcion;
@@ -25,16 +26,19 @@ import static org.junit.Assert.*;
  *
  * @author HenryRG
  */
-public class TestCtrlG {
+public class TestRoles {
     
     private RolesDTO rol1;
     private RolesDTO rol2;
     private RolesDTO rol3;
     private RolesDTO rol4;
     
+    
+    
     private List <RolesDTO> ListRoles;
     
-    public TestCtrlG() {
+    
+    public TestRoles() {
     }
     
     @BeforeClass
@@ -96,7 +100,9 @@ public class TestCtrlG {
             
             
         } catch (SQLException | MyErrorExcepcion ex) {
-            Logger.getLogger(TestCtrlG.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TestRoles.class.getName()).log(Level.SEVERE, null, ex);
         }
      }
+     
+     
 }

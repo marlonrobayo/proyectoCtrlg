@@ -19,7 +19,6 @@
         <link rel="shortcut icon" href="Logo.ico" />
         <title>Administrar Item facturable</title>
         <script src="js/jquery.js"></script>
-        <script src="js/jquery.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/jquery-ui.js"></script>
         <script src="js/jquery.validate.js"></script>

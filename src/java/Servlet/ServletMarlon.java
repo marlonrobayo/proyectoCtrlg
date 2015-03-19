@@ -75,6 +75,7 @@ public class ServletMarlon extends HttpServlet {
                  session.setAttribute("filtroid", filtro);
                  response.sendRedirect("administraritemfacturable.jsp");
            
+                 
            }else if(request.getParameter("btnModificarItem") != null && request.getParameter("mItem")!= null){
               int prim;
               ItemDTO modtem = new ItemDTO();
