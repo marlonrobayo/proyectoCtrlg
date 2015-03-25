@@ -76,17 +76,17 @@ figcaption h1 {
     color: rgb(255,121,0);
     text-align:left;
     font-size: 3.5em;
-    margin-top: 15px;
+    margin-top: 8px;
 }
 nav {
-    
     width: 600px;
     height:auto;
     float:none  ;
-    padding-top: 0;
-    padding-left: 5%;
-    padding-right: 5%;   
-    text-align: center;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 10%;   
+    
+     
 }
 nav a {
 
@@ -179,9 +179,9 @@ nav a:hover {
 #logeo2 {
 
     float: right;
-    padding-top: 10px;
+    padding-top: 20px;
     color:white;
-    padding-right: 10px;
+    padding-right: 15px;
     font-size: 10px;
 }
 
@@ -224,16 +224,13 @@ nav a:hover {
 
 #image_index{
     float: left;
-    padding:0px;
-    margin:20px 0px 0px 20px;
-    width:416px;
-    height:388px;
-    border-radius: 9px;
+    padding:10px;
+    margin: 20px 10px 0px 20px;
+    width:630px;
+    height:auto;
     box-shadow: 0px 3px 11px rgba(000, 000, 000, 0.5), inset 0px 0px 1px rgba(232, 225, 231, 1);
-    background-image: url(../imagenes/Indexx.jpg);
-    background-repeat:no-repeat;
-    background-position:left;		
-}
+    border-radius: 5px;
+    }
 footer {
 
     width: 100%;

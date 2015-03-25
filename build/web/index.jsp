@@ -18,6 +18,10 @@
                     <h1>Ctrl+G</h1>
                 </div>
             </figcaption>
+            <div id= "logeo2">
+                <h2> Control De Gestión Financiera Para Ingresos</h2>
+
+            </div>
                     </header>
         <div id= "contenido">
         <div id="wowslider-container1">
@@ -33,9 +37,23 @@
         </div></div>
         <div class="ws_shadow"></div>
         </div></div>
-        <div id="contenido">
+        <div id="contenido">            
          <div class="row">
-         <div class="col-md-9"></div>
+             <div class="col-md-9">
+             <nav > 
+                <a href="#">Visión</a>
+                <a href="#">Misión</a>
+             </nav>
+                 <div id="image_index">
+                   <p class="ext-left">       
+                     Toma el control y respira tranquilo
+                     Ahora puedes controlar, mejorar la toma decisiones y hacer gestión integral de negocios y tus ingresos con el sistema de gestión de información CTRL+G . 
+                     Sus módulos de Ítems Facturables y Metas te permiten tener un seguimiento detallado de cada uno de los indicadores. Con su generador de reportes tienes información actualizada y confiable 
+                     asegurándote a tomar decisiones profesionalmente. Además recibes alertas sobre puntos de ataque crítico en tu correo para cuidar tus ingresos.
+                    </p> 
+                 </div>       
+                 
+             </div>
          <div class="col-md-3">
              <div id="Login">
                  <fieldset class="text-primary h3">Ingresar al Sistema</fieldset>
@@ -46,10 +64,10 @@
                  </div>
                  <div class="form-group">
                      <label for="clave">Contraseña</label>
-                     <input type="password" class="form-control" id="clave" name="clave" placeholder="Password" required="">
+                     <input type="password" class="form-control" id="clave" name="clave" placeholder="Su contraseña" required="">
                  </div>                   
                  <input type="hidden" name="UserIn" id="UserIn" value=""/>
-                 <button type="submit" class="btn btn-default" name="ValidUser" id="ValidUser">Ingresar</button>
+                 <button type="submit" class="btn btn-warning" name="ValidUser" id="ValidUser">Ingresar</button>
              </form>
                      <br>
                 <div class="text-right"><a href= "solicitaracceso.jsp" class="fontWi">Solicitar acceso</a> </div>

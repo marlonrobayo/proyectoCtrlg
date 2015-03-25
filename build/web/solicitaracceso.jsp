@@ -42,14 +42,7 @@
                             <label id = "ConAste"  for="nommail">Dirección de correo</label>
                             <input type="text" class="form-control" id="nommail" name="nommail"placeholder="Enter email" tabindex="1" required="">
                         </div>
-                        <div class="form-group">
-                            <label  for="exampleInputEmail2">Dominio</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">@</div>
-                                <input class="form-control" type="email" placeholder="callcentercsc.com" disabled tabindex="2" required="">
-                            </div>
-                        </div>
-                         <div class="form-group">
+                       <div class="form-group">
                         <label  id="ConAste" for="name1">Nombre y Apellidos</label>
                         <input type="text" class="form-control" id="name1" name="name1" placeholder="Su nombres y apellidos" tabindex="2" requiered="">
                         </div>
@@ -76,8 +69,9 @@
                         </select>
                     </div>
                     </div>
-                         <div class="space"><br><br></div>
+                         <div class="space"><br></div>
                     <button type="submit" class="btn btn-primary" data-toggle="collapse"   href=".alert-success" data-target="#myModal" tabindex="6" >Solicitar</button>
+                    <button type="button" class="btn btn-danger"  tabindex="7" onclick="myFunction();" >Cancelar</button>
                 </form>
             </div>                 
         </div>
@@ -96,6 +90,11 @@
                 }
             });
         });
+    </script>
+    <script>
+      function myFunction() {
+          location.href = "index.jsp";
+      }
     </script>
  </body>
 </html>
