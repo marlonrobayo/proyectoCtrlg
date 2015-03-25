@@ -12,7 +12,7 @@
     </head>
     <body>
         <header>
-            <figure> <img src="imagenes/logo.png" alt="logo" /> </figure>
+            <figure><img src="imagenes/logo.png" alt="logo"/> </figure>
             <figcaption> 
                 <div id= "logeo2">
                     <h1>Ctrl+G</h1>
@@ -44,13 +44,15 @@
                 <a href="#">Visión</a>
                 <a href="#">Misión</a>
              </nav>
+                 <div class="spacio"></div>
                  <div id="image_index">
-                   <p class="ext-left">       
-                     Toma el control y respira tranquilo
-                     Ahora puedes controlar, mejorar la toma decisiones y hacer gestión integral de negocios y tus ingresos con el sistema de gestión de información CTRL+G . 
-                     Sus módulos de Ítems Facturables y Metas te permiten tener un seguimiento detallado de cada uno de los indicadores. Con su generador de reportes tienes información actualizada y confiable 
-                     asegurándote a tomar decisiones profesionalmente. Además recibes alertas sobre puntos de ataque crítico en tu correo para cuidar tus ingresos.
-                    </p> 
+                     
+                     <dl>
+                      <dt> Toma el control y respira tranquilo, </dt>
+                      <dd>Ahora puedes controlar, mejorar la toma decisiones y hacer gestión integral de negocios y tus ingresos con el sistema de gestión de información CTRL+G . 
+                     Sus módulos de Ítems Facturables y Metas te permiten tener un seguimiento detallado de cada uno de los indicadores. <br>Con su generador de reportes tienes información actualizada y confiable 
+                     asegurándote a tomar decisiones profesionalmente. Además recibes alertas sobre puntos de ataque crítico en tu correo para cuidar tus ingresos.</dd>
+                    </dl>                 
                  </div>       
                  
              </div>
@@ -76,7 +78,7 @@
                 <%  out.print(request.getParameter("sal"));  %>
              </div>
                 <p></p>
-                <p><a href= "recuperaclave.jsp">Recuperar contraseña</a> </p>
+                <p><a href= "recuperaclave.jsp" class="fontWi">Recuperar contraseña</a> </p>
                 <%}
                 %>
          </div>
