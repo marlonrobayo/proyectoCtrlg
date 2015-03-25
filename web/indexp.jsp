@@ -40,11 +40,8 @@
                             <label  for="nommail">Correo Corporativo</label>
                             <input type="text" class="form-control" id="nommail" name="nommail" placeholder="carlos.santana" tabindex="1" required="">
                         </div>
-                    
-
-
-                    <div class="form-group">
-                        <label for="Clave">Crontraseña</label>
+                       <div class="form-group">
+                        <label for="clave">Crontraseña</label>
                         <input type="password" class="form-control" id="clave" name="clave" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" tabindex="3" required="" >
                     </div>
                     <div class="checkbox">

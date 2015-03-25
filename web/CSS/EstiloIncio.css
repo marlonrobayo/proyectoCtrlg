@@ -75,8 +75,8 @@ figcaption {
 figcaption h1 {
     color: rgb(255,121,0);
     text-align:left;
-    font-size: 1.5em;
-    margin-top: 35px;
+    font-size: 3.5em;
+    margin-top: 15px;
 }
 nav {
     
@@ -261,11 +261,11 @@ footer {
     width:300px;
     min-height:200px;
     margin-left:100px;
-    margin-right: 100px;
+    margin-right: 15px;
     margin-top: 20px;
     padding:15px;
-
-    box-shadow: 0px 3px 11px rgba(000, 000, 000, 0.1), inset 0px 0px 0.5px rgba(232, 225, 231, 1);
+    box-shadow: 0px 3px 11px rgba(000, 000, 000, 0.2), inset 0px 0px 0.5px rgba(232, 225, 231, 1);
+    border-radius: 5px ;
 }
 #forModal{
  
@@ -444,7 +444,7 @@ color: green;
 font-weight: bold;}
 
 .fontWi {
-font-size: 1.2em;
+font-size: 1em;
 font-weight: bold;
 
 }
