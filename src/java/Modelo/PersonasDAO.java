@@ -138,13 +138,17 @@ public class PersonasDAO {
                 salida = "El usuario ya existe en el sistema con la cedula:"+ cedula;  
             } else{
                 
-            String sql = "INSERT INTO personas (Cedula, NombreApellido, Estado, Correo, Clave) VALUES (?,?,?,?,md5(?))";            
+            String sql = "INSERT INTO personas (cedula, nombreapellido, estado, correo, clave, celular, aprobado, fecharegistro) VALUES (?,?,?,?,md5(?),?,?,?)";            
             pstmt = cnn.prepareStatement(sql);
             pstmt.setString(1, newuser.getCc());
             pstmt.setString(2, newuser.getNombreCompleto());
             pstmt.setInt(3, newuser.getEstadouser());
             pstmt.setString(4, newuser.getLoginuser());
             pstmt.setString(5, newuser.getContrasena());
+            pstmt.setInt(6, newuser.getCelu());
+            pstmt.setInt(7, newuser.getAproba());
+            pstmt.setString(8, newuser.getFehcaIn());
+            
             
             if (pstmt.executeUpdate() > 0) {
                 salida += "Se creo el usuario con exito ";
@@ -288,5 +292,5 @@ public class PersonasDAO {
         return salida;
     }
  
-    
+   
 }

@@ -18,7 +18,10 @@ public class PersonasDTO {
      private String loginuser ;
      private String contrasena ;
      private int roluserint ;
-     
+     private int celu;
+     private int aproba;
+     private String fehcaIn;
+      
     public PersonasDTO() {
     }
 
@@ -118,6 +121,48 @@ public class PersonasDTO {
      */
     public void setRoluserint(int roluserint) {
         this.roluserint = roluserint;
+    }
+
+    /**
+     * @return the celu
+     */
+    public int getCelu() {
+        return celu;
+    }
+
+    /**
+     * @param celu the celu to set
+     */
+    public void setCelu(int celu) {
+        this.celu = celu;
+    }
+
+    /**
+     * @return the aproba
+     */
+    public int getAproba() {
+        return aproba;
+    }
+
+    /**
+     * @param aproba the aproba to set
+     */
+    public void setAproba(int aproba) {
+        this.aproba = aproba;
+    }
+
+    /**
+     * @return the fehcaIn
+     */
+    public String getFehcaIn() {
+        return fehcaIn;
+    }
+
+    /**
+     * @param fehcaIn the fehcaIn to set
+     */
+    public void setFehcaIn(String fehcaIn) {
+        this.fehcaIn = fehcaIn;
     }
 
     

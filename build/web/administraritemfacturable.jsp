@@ -166,7 +166,7 @@
 
             <div id="agre" > 
 
-                <button  class="btn btn-primary btn-xs" onclick="myFunction()"><span class="glyphicon glyphicon-plus" > </span> Nuevo  Item</button>
+                <button  class="btn btn-primary btn-xs" onclick="myFunction()"><span class="glyphicon glyphicon-plus" > </span> Nuevo Item</button>
                 <a href="pages/generarexcelItem.jsp" class="btn btn-success btn-xs" > Excel <span class="glyphicon glyphicon-arrow-down" ></span></a>
             </div>
             <script>

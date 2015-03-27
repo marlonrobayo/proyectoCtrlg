@@ -2,13 +2,23 @@
 <!doctype html>
 <html>
     <head>
-        <link rel="" href="logo.ico" />
+         <link rel="shortcut icon" href="Logo.ico" />
         <title>Control de gestión financiera de Call Center</title>
         <script src="js/jquery.js"></script>
         <script src="js/jquery.validate.js"></script>
         <link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="CSS/EstiloIncio.css">
-        <link href="CSS/styles.css" rel="stylesheet" type="text/css"/>              
+        <link href="CSS/styles.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript">
+        function cargarobjeto(objeto, id)
+        {
+        if (objeto.readyState == 4) //si se ha cargado completamente
+        document.getElementById(id).innerHTML=objeto.responseText
+        else //en caso contrario, mostramos un gif simulando una precarga
+        //document.write();                     
+        document.getElementById(id).innerHTML=''
+        }
+        </script>
     </head>
     <body>
         <header>
@@ -20,9 +30,8 @@
             </figcaption>
             <div id= "logeo2">
                 <h2> Control De Gestión Financiera Para Ingresos</h2>
-
             </div>
-                    </header>
+        </header>
         <div id= "contenido">
         <div id="wowslider-container1">
         <div class="ws_images"><ul>
@@ -40,21 +49,22 @@
         <div id="contenido">            
          <div class="row">
              <div class="col-md-9">
-             <nav > 
-                <a href="#">Visión</a>
-                <a href="#">Misión</a>
-             </nav>
+            <nav> 
+                <a href="#" onclick="myFunction();">Inicio</a> 
+                <a href="javascript:Carga('mision.jsp','mainContent')">Misión</a>
+                <a href="javascript:Carga('vision.jsp','mainContent')">Visión</a>
+            </nav>
                  <div class="spacio"></div>
                  <div id="image_index">
-                     
+                  <div id="mainContent">   
                      <dl>
-                      <dt> Toma el control y respira tranquilo, </dt>
+                         <dt><p class="fontWi2 text-success"> Toma el control y respira tranquilo,</p> </dt>
                       <dd>Ahora puedes controlar, mejorar la toma decisiones y hacer gestión integral de negocios y tus ingresos con el sistema de gestión de información CTRL+G . 
                      Sus módulos de Ítems Facturables y Metas te permiten tener un seguimiento detallado de cada uno de los indicadores. <br>Con su generador de reportes tienes información actualizada y confiable 
                      asegurándote a tomar decisiones profesionalmente. Además recibes alertas sobre puntos de ataque crítico en tu correo para cuidar tus ingresos.</dd>
-                    </dl>                 
-                 </div>       
-                 
+                    </dl> 
+                 </div>
+                 </div>                        
              </div>
          <div class="col-md-3">
              <div id="Login">
@@ -89,6 +99,7 @@
     <footer>©Año 2015 Ctrl+G - PROYECTO FORMATIVO</footer>
   <script src="js/engine/wowslider.js" type="text/javascript"></script>
  <script src="js/engine/script.js" type="text/javascript"></script>
+ <script src="js/ajax.js" type="text/javascript"></script>
 <script>
         $().ready(function () {
             $("#FormularioRgistro").validate({
@@ -100,6 +111,10 @@
             });
         });
     </script>
-
+    <script>
+      function myFunction() {
+          location.href = "index.jsp";
+      }
+    </script>
  </body>
 </html>

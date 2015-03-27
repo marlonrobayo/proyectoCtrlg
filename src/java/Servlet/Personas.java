@@ -108,9 +108,33 @@ public class Personas extends HttpServlet {
                  session.setAttribute("idlistar", "");
                  session.removeAttribute("idlistar");
                  response.sendRedirect("gestionuseredit.jsp"); 
-                }
+                }                
               
-            }else{
+            }
+            
+            else if(request.getParameter("newSolcitud")!=null && request.getParameter("solicitudReg")!=null){
+                PersonasDAO personaCrear = new PersonasDAO();
+                PersonasDTO personaReg = new PersonasDTO();
+                
+                String idUserTrae = request.getParameter("cc");                        
+                
+                personaReg.setLoginuser(request.getParameter("nommail"));
+                personaReg.setNombreCompleto(request.getParameter("name1"));
+                personaReg.setCc(request.getParameter("cc"));
+                personaReg.setNombreCompleto(request.getParameter("celular"));
+                personaReg.setRoluserint(Integer.parseInt(request.getParameter("rol")));
+                personaReg.setContrasena(request.getParameter("contra"));
+                
+                //Luego de tener el objeto dto creado y "cargado" con los datos del formulario, creamos el DAO
+                // y llamamos el metodo para registrar un nuevo profesor. recordar que ese metodo devuelve una cadena
+                //String mensaje="";
+                String mensaje =(personaCrear.crearRegistroPersona(personaReg, idUserTrae));
+                //Una vez recibido el mensaje el siguiente paso es reenviarlo al usuario en la interfaz
+                mensaje = mensaje +". "+" Un correo le sera enviado cuando su usuario haya sido aprobado, Gracias." ;  
+               response.sendRedirect("solicitudinfo.jsp?msg="+mensaje);  // lo pasamos como atributo usando el metodo get
+            }
+            
+            else{
                 
                 out.println("Esta intentando acceder de forma fraudulenta");
             }

@@ -35,11 +35,10 @@ body {
 header {
     padding:0;
     height:80px;
-    margin-bottom:18px;
+    margin-bottom:5px;
     background-color: rgb(41,62,107);
     border-radius: 0px 0px 20px 20px;
-    box-shadow:
-        0px 3px 11px rgba(000, 000, 000, 0.5), inset 0px 0px 1px rgba(232, 225, 231, 1);
+    box-shadow:0px 3px 11px rgba(000, 000, 000, 0.5), inset 0px 0px 1px rgba(232, 225, 231, 1);
 }
 
 #paraima {
@@ -123,7 +122,7 @@ nav a:hover {
     min-height:200px;
     border-radius: 9px ;
     margin-top:6px;
-    margin-bottom:20px;
+    margin-bottom:10px;
     padding: 7px;
 }
 
@@ -311,6 +310,7 @@ text-shadow: initial;
     margin-top:5px;
     margin-bottom: 20px;
     box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
+    border-radius: 9px;
 }
 
 #ContenidoInterno5{
@@ -319,6 +319,7 @@ text-shadow: initial;
     padding:14px;
     margin-bottom:30px;
     box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
+     border-radius: 9px;
 }
 
 #ContenidoInterno5{
@@ -327,6 +328,7 @@ text-shadow: initial;
     padding:14px;
     margin-bottom:30px;
     box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
+     border-radius: 9px;
 }
 
 #ContenidoInternoSolicitud{
@@ -338,6 +340,7 @@ text-shadow: initial;
     margin-top:5px;
     margin-bottom: 20px;
     box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
+     border-radius: 9px;
 }
 
 #ContenidoInterno2{
@@ -347,6 +350,7 @@ text-shadow: initial;
     padding:20px;
     margin-bottom: 30px;
     box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
+     border-radius: 9px;
 }
 
 #ContenidoInterno4{
@@ -357,6 +361,7 @@ text-shadow: initial;
     margin-top:10px;
     margin-bottom: 20px;
     box-shadow: 0px 3px 11px rgba(060, 000, 000, 0.5), inset 0px 0px 1px rgba(060, 000, 000, 1);
+    border-radius: 9px;
 }
 
 #InfoImportante
@@ -442,6 +447,12 @@ font-weight: bold;}
 
 .fontWi {
 font-size: 1em;
+font-weight: bold;
+
+}
+
+.fontWi2 {
+font-size: 1.5em;
 font-weight: bold;
 
 }

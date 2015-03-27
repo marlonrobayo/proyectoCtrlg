@@ -45,12 +45,12 @@
 </script>
 <script>
       function myFunction() {
-          window.open("gestionrol.jsp", "_blank", "toolbar=no, scrollbars=no, resizable=no, top=20, left=250, width=400, height=650");
+          window.open("gestionrol.jsp", "_blank", "toolbar=no, scrollbars=no, resizable=no, top=20, left=250, width=400, height=600");
       }
 </script>
 <script>
       function myFunction2(dato2) {
-          window.open("gestionrol1.jsp?idclie="+dato2, "_blank", "toolbar=no, scrollbars=no, resizable=no, top=20, left=250, width=400, height=650");
+          window.open("gestionrol1.jsp?idclie="+dato2, "_blank", "toolbar=no, scrollbars=no, resizable=no, top=20, left=250, width=400, height=600");
       }
 </script>
 </head>

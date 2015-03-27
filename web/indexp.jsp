@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
     <head>
-        <link rel="shortcut icon" href="logo.ico" />
+         <link rel="shortcut icon" href="Logo.ico" />
         <title>Control de gestión financiera</title>
         <script src="js/jquery.js"></script>
         <script src="js/jquery.validate.js"></script>

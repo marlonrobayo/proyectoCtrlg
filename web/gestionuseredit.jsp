@@ -47,17 +47,12 @@
 </script>
 <script>
       function myFunction() {
-          window.open("gestionuser.jsp", "_blank", "toolbar=no, scrollbars=no, resizable=no, top=10, left=250, width=430, height=700");
+          window.open("gestionuser.jsp", "_blank", "toolbar=no, scrollbars=no, resizable=no, top=10, left=250, width=430, height=600");
       }
 </script>
 <script>
       function myFunction1(dato1) {
-                    window.open("gestionuser1.jsp?idclie="+dato1, "_blank", "toolbar=no, scrollbars=no, resizable=no, top=10, left=250, width=430, height=700");
-      }
-</script>
-<script>
-      function myFunction2() {
-          window.open("gestionrol.jsp", "_blank", "toolbar=no, scrollbars=no, resizable=no, top=10, left=250, width=400, height=680");
+                    window.open("gestionuser1.jsp?idclie="+dato1, "_blank", "toolbar=no, scrollbars=no, resizable=no, top=10, left=250, width=430, height=600");
       }
 </script>
 </head>
