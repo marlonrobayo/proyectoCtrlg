@@ -27,8 +27,8 @@
              
         <div id="contenido1"> 
            <div id ="ContenidoInterno3">
-                <% if (request.getParameter("msg") != null) {  %>
-                <div class="bg-info confirmarOK"><%=request.getParameter("msg")%></div>
+               <% if (request.getParameter("msg") != null) {  %>
+                   <div class="bg-info confirmarOK text-center"><%=request.getParameter("msg")%></div>
                 <% } %>
                <form id="crearUsuario" role="form" method="post" action="Personas" name="crearUsuario">
                              <h4>Crear Nuevo Usuario:</h4>

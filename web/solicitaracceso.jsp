@@ -26,59 +26,45 @@
             </div>
         </header>
         <div id= "contenido">            
-            <div class="collapse alert alert-warning alert-dismissible fade" role="alert"  id="myModal"  tabindex="-1" role="dialog" aria-labelledby="myModal1" aria-hidden="true" >
+           <!-- <div class="collapse alert alert-warning alert-dismissible fade" role="alert"  id="myModal"  tabindex="-1" role="dialog" aria-labelledby="myModal1" aria-hidden="true" >
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <strong>Atencion!</strong> No se ha registrado la información por favor verifique los campos del formulario.
-            </div>
+            </div> !-->
             <div>
             <center>    
             <h3 class="text-primary">Formulario Solicitud de Acceso</h3>
            </center>
-           </div>             
+           </div>    
+            <center><% if (request.getParameter("msg") != null) {  %>
+                <div class="bg-info confirmarOK"><%=request.getParameter("msg")%></div>
+                <% } %></center>
           <div id = "ContenidoInternoSolicitud">
-                <form id="FormularioRgistro" role="form" method="post" action="Personas"> 
+        <form id="FormularioRgistro" role="form" method="post" action="Personas"> 
                      <div id="Aleta"><span style="color:red;font-size: 16px;" > *</span>Campos obligatorios</div> 
                      <br>
                     <div class="form-inline">
                         <div class="form-group">
-                            <label id = "ConAste"  for="nommail">Dirección de correo</label>
-                            <input type="text" class="form-control" id="nommail" name="nommail" placeholder="Enter email" tabindex="1" required="">
+                            <label id="ConAste" for="cc">Identificación personal</label>
+                            <input type="text" class="form-control" id="cc" name="cc" placeholder="Número de cédula" tabindex="1" required="" >
                         </div>
-                       <div class="form-group">
-                        <label  id="name1" for="name1">Nombre y Apellidos</label>
+                         <div class="form-group">
+                        <label  id="ConAste" for="name1">Nombre y Apellidos</label>
                         <input type="text" class="form-control" id="name1" name="name1" placeholder="Su nombres y apellidos" tabindex="2" required="">
-                        </div>
+                        </div> 
                         <div class="form-group">
-                            <label id="cc" for="cc">Identificación personal</label>
-                            <input type="text" class="form-control" id="cc" name="cc" placeholder="Número de cédula" tabindex="3" required="" >
+                            <label id = "ConAste"  for="nommail">Dirección de correo</label>
+                            <input type="text" class="form-control" id="nommail" name="nommail" placeholder="Enter email" tabindex="3" required="">
                         </div>
+                                             
                         <div class="form-group">
-                            <label id = "celular"  for="celular">Número Celular</label>
-                            <input type="text" class="form-control" id="celular" name = "celular" placeholder="3102408796" tabindex="4" required="" >
-                        </div>
-                         <div class="form-group">
-                        <label id = "rol"  for="rol">Seleccione Cargo</label>
-                        <%
-                                                RolesDAO listRol = new RolesDAO();                                                
-                                            %> 
-                        <select class="form-control" name="rol" placeholder="Seleccion un Rol" id="rol"  tabindex="5" required=""/>
-                        <option selected="true" disabled="disabled" value="no">Seleccione un Cargo</option>
-                         <% ArrayList<RolesDTO> listaRoles = listRol.listarRoles();
-                                            for (RolesDTO listar : listaRoles) {%>; 
-                         <option value="<%=listar.getRolid()%>"><%=listar.getNamerol()%></option>                          
-                         <% }%>
-                        
-                        </select>
-                    </div>
-                         <div class="form-group">
-                            <label id="contra"  for="contra">Su Contraseña</label>
-                            <input type="password" class="form-control" id="contra" name="contra" placeholder="Su Contraseña" tabindex="6" required="" >
-                        </div>
+                            <label id="ConAste"  for="celular">Número Celular</label>
+                            <input type="text" class="form-control" id="celular" name = "celular" placeholder="Su numero" tabindex="4" required="" >
+                        </div>                       
                     </div>
                          <div class="space"><br></div>
                          <input type="hidden" name="newSolcitud" id="newSolcitud" value="" />
-                    <button type="submit" class="btn btn-primary" data-toggle="collapse"   href=".alert-success" data-target="#myModal" tabindex="7" id="solicitudReg" name="solicitudReg" >Solicitar</button>
-                    <button type="button" class="btn btn-danger"  tabindex="8" onclick="myFunction();" >Cancelar</button>
+                    <button type="submit" class="btn btn-primary" data-toggle="collapse"   href=".alert-success" data-target="#myModal" tabindex="5" id="solicitudReg" name="solicitudReg" >Enviar Solicitud</button>
+                    <button type="button" class="btn btn-danger"  tabindex="6" onclick="myFunction();" >Cancelar</button>
                 </form>
             </div>              
         </div>
@@ -89,12 +75,11 @@
             // validaciÃ³n del formulario
             $("#FormularioRgistro").validate({
                 rules: {
-                    nommail: {required: true, minlength: 5, maxlength: 40},
+                    cc:{required: true, minlength: 5, maxlength: 15}
                     name1:{required: true, minlength: 5, maxlength: 45}
-                    clave: {required: true, minlength: 6},
-                    telefono: {required: true, minlength: 5, maxlength: 5},
+                    nommail: {required: true, minlength: 5, maxlength: 40},                    
                     celular: {required: true, minlength: 9, maxlength: 9},
-                    contra:{required: true, minlength: 5, maxlength: 45}
+                    
                 }
             });
         });

@@ -47,12 +47,12 @@
 </script>
 <script>
       function myFunction() {
-          window.open("gestionuser.jsp", "_blank", "toolbar=no, scrollbars=no, resizable=no, top=10, left=250, width=430, height=600");
+          window.open("gestionuser.jsp", "_blank", "toolbar=no, scrollbars=no, resizable=no, top=10, left=250, width=430, height=700");
       }
 </script>
 <script>
       function myFunction1(dato1) {
-                    window.open("gestionuser1.jsp?idclie="+dato1, "_blank", "toolbar=no, scrollbars=no, resizable=no, top=10, left=250, width=430, height=600");
+                    window.open("gestionuser1.jsp?idclie="+dato1, "_blank", "toolbar=no, scrollbars=no, resizable=no, top=10, left=250, width=430, height=700");
       }
 </script>
 </head>
@@ -143,7 +143,13 @@
                             <tr>
                              <td><%=personaList.getCc()%></td>
                              <td><%=personaList.getNombreCompleto()%></td>
-                             <td><%=personaList.getEstadouser()%></td>
+                             <% int estado1=personaList.getEstadouser();
+                             if (estado1 == 0){ String restado = "Inactivo"; %>
+                             <td><%=restado %></td>
+                              <%}
+                             else{ String restado = "Activo"; %>
+                             <td><%=restado %></td>
+                             <%} %>                            
                              <td><%=personaList.getLoginuser()%></td>
                              <td><%=personaList.getRoluser() %></td>
                               <td><div style="display: inline-block;">

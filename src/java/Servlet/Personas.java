@@ -5,14 +5,20 @@
  */
 package Servlet;
 
+import Dto.MensajeDTO;
 import Dto.PersonasDTO;
+import Modelo.EmailDAO;
 import Modelo.PersonasDAO;
+import Utilidades.Email;
 import Utilidades.MyErrorExcepcion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,6 +43,7 @@ public class Personas extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, MyErrorExcepcion, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession();
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
@@ -99,7 +106,6 @@ public class Personas extends HttpServlet {
                 // recogemos los datos del formulario mediante el objeto request y los asignamos al objeto dto
                 //Recordar que si hay enteros toca hacer cast primero porque por defecto todos los campos del formulario
                 //legan como texto
-                HttpSession session = request.getSession();
                 if (request.getParameter("idtextbuscar")!= null && !request.getParameter("idtextbuscar").equals("")){
                 numeroID = (request.getParameter("idtextbuscar")); 
                 session.setAttribute("idlistar", numeroID);
@@ -110,28 +116,66 @@ public class Personas extends HttpServlet {
                  response.sendRedirect("gestionuseredit.jsp"); 
                 }                
               
-            }
-            
+            }      
+                        
             else if(request.getParameter("newSolcitud")!=null && request.getParameter("solicitudReg")!=null){
+               
+                // recogemos los datos del formulario mediante el objeto request y los asignamos al objeto dto
+                //Recordar que si hay enteros toca hacer cast primero porque por defecto todos los campos del formulario
+                //legan como texto
+                int estadoDefault =0;
+                int estadoRolNum =5;
+                String mensaje ="";
+                String mensajeRTA = "";
+                String base = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$";
+                int LargoContrasena=8;
+                String contrasena="";
+                int longitud = base.length();
+                for(int i=0; i<LargoContrasena;i++){ 
+                int numero = (int)(Math.random()*(longitud)); 
+                String caracter=base.substring(numero, numero+1); 
+                contrasena=contrasena+caracter; }                          
+               
+                Date today = new Date();
+                SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String date = DATE_FORMAT.format(today);
+                
+                
                 PersonasDAO personaCrear = new PersonasDAO();
                 PersonasDTO personaReg = new PersonasDTO();
                 
-                String idUserTrae = request.getParameter("cc");                        
-                
-                personaReg.setLoginuser(request.getParameter("nommail"));
-                personaReg.setNombreCompleto(request.getParameter("name1"));
+                String idUserTrae = request.getParameter("cc");
+                        
                 personaReg.setCc(request.getParameter("cc"));
-                personaReg.setNombreCompleto(request.getParameter("celular"));
-                personaReg.setRoluserint(Integer.parseInt(request.getParameter("rol")));
-                personaReg.setContrasena(request.getParameter("contra"));
+                personaReg.setNombreCompleto(request.getParameter("name1"));
+                personaReg.setEstadouser(estadoDefault);
+                personaReg.setLoginuser(request.getParameter("nommail"));
+                personaReg.setContrasena(contrasena);
+                personaReg.setCelu(Integer.parseInt(request.getParameter("celular")));
+                personaReg.setFehcaIn(date);                
+                personaReg.setRoluserint(estadoRolNum);
                 
-                //Luego de tener el objeto dto creado y "cargado" con los datos del formulario, creamos el DAO
-                // y llamamos el metodo para registrar un nuevo profesor. recordar que ese metodo devuelve una cadena
-                //String mensaje="";
-                String mensaje =(personaCrear.crearRegistroPersona(personaReg, idUserTrae));
-                //Una vez recibido el mensaje el siguiente paso es reenviarlo al usuario en la interfaz
-                mensaje = mensaje +". "+" Un correo le sera enviado cuando su usuario haya sido aprobado, Gracias." ;  
-               response.sendRedirect("solicitudinfo.jsp?msg="+mensaje);  // lo pasamos como atributo usando el metodo get
+                mensaje = (personaCrear.crearRegistroSolicitudP(personaReg, idUserTrae));             
+                
+                if (mensaje != "OKUSER"){
+                
+                String emailFrom = ("henry.rodriguez@energiaintegralandina.com");
+                String emailTo = request.getParameter("nommail");
+                String asunto = ("Informacion de Registro");
+                String textmensaje = ("Gracias por registrarse en CtrlG, sus datos de ingreso son Usuario: "+ emailTo + ", Su Contraseña:"+ contrasena);
+                EmailDAO msjDAO = new EmailDAO();
+                MensajeDTO msjDTO = new MensajeDTO(emailTo, emailFrom, asunto, textmensaje);
+                                      
+                Email envioEmail = new Email("smtpout.secureserver.net", "25", msjDTO);
+                mensajeRTA = envioEmail.enviarEmail(asunto, textmensaje);
+                msjDAO.crearRegistroMail(msjDTO);
+                response.sendRedirect("solicitaracceso.jsp?msg="+ mensaje +",  "+ mensajeRTA );
+                }
+                else {
+                mensaje ="El usuario ya existe con el numero de identificacion ingresado!!";    
+                response.sendRedirect("solicitaracceso.jsp?msg="+ mensaje );  
+                }      
+                
             }
             
             else{
@@ -149,7 +193,19 @@ public class Personas extends HttpServlet {
 //            out.println("<h1>Servlet Personas at " + request.getContextPath() + "</h1>");
 //            out.println("</body>");
 //            out.println("</html>");
-        }
+        } 
+        catch (SQLException ex) {
+            String mensaje1 = "Error SQL: " + ex.getErrorCode() + " - " + ex.getMessage();
+            if(ex.getErrorCode() == 1452){
+                mensaje1 = "Su e-mail no está registrado para enviar mensajes.";
+                response.sendRedirect("solicitaracceso.jsp?msg="+ mensaje1);
+            }
+            session.setAttribute("mensaje", mensaje1);
+        } catch (Exception ex) {
+            String mensaje1 = "Error en el servidor: " + ex.getMessage();
+            session.setAttribute("mensaje", mensaje1);
+            response.sendRedirect("solicitaracceso.jsp?msg="+ mensaje1);
+        } 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

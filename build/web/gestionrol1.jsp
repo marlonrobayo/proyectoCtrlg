@@ -55,7 +55,7 @@
                     <div id="Aleta"><span style="color:red;font-size: 12px;" >*</span>Campos Obligatorios</div> 
                     <div class="form-group">
                         <label  for="idrol1" id="ConAste">Id Rol</label>
-                        <input type="text" class="form-control" id="idrol1" name="idrol1" placeholder="ID rol" tabindex="1" requiered="true" accept=""
+                        <input type="text" class="form-control" id="idrol1" name="idrol1" placeholder="ID rol" tabindex="1" requiered="true" readonly="" 
                                value="<% if (rolUpdate != null) {
                                 out.print(rolUpdate.getRolid()); }%>">
                     </div>

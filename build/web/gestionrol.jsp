@@ -32,14 +32,10 @@
                 <% if (request.getParameter("msg") != null) {  %>
                 <div class="bg-info confirmarOK"><%=request.getParameter("msg")%></div>
                 <% } %>
-               <form id="crearUsuario" role="form" method="post" action="Roles" name="crearUsuario">
+               <form id="crearUsuario" role="form" method="post" action="Roles" name="crearRol">
                              <h4>Crear Nuevo Rol</h4>
                     <div id="Aleta"><span style="color:red;font-size: 12px;" >*</span>Campos obligatorios</div> 
-                    <div class="form-group">
-                        <label  for="idrol1" id="ConAste">Id Rol</label>
-                        <input type="text" class="form-control" id="idrol1" name="idrol1" placeholder="ID rol" tabindex="1" requiered="true">
-                    </div>
-                    <div class="form-group">
+                   <div class="form-group">
                         <label  for="namerol" id="ConAste">Nombre Rol</label>
                         <input type="text" class="form-control" id="namerol" name="namerol" placeholder="Como se llamará el rol" tabindex="2" requiered="true">
                     </div>
@@ -48,7 +44,7 @@
                          <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                                  <label>
-                                     <input type="checkbox"> Página Usuario
+                                     <input type="checkbox" name="paginas" id="pu"> Página Usuario
                                  </label>
                              </div>
                          </div>
@@ -57,7 +53,7 @@
                          <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                                  <label>
-                                     <input type="checkbox"> Página Clientes
+                                     <input type="checkbox" name="paginas" id="pc"> Página Clientes
                                  </label>
                              </div>
                          </div>
@@ -66,7 +62,7 @@
                          <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                                  <label>
-                                     <input type="checkbox"> Página CeCos
+                                     <input type="checkbox" name="paginas" id="pce" > Página CeCos
                                  </label>
                              </div>
                          </div>
@@ -75,7 +71,7 @@
                          <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                                  <label>
-                                     <input type="checkbox"> Item's Facturables
+                                     <input type="checkbox" name="paginas" id="pif"> Item's Facturables
                                  </label>
                              </div>
                          </div>
@@ -84,7 +80,7 @@
                          <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                                  <label>
-                                     <input type="checkbox"> Metas y Resultados
+                                     <input type="checkbox" name="paginas" id="pmr"> Metas y Resultados
                                  </label>
                              </div>
                          </div>
@@ -93,7 +89,7 @@
                          <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                                  <label>
-                                     <input type="checkbox"> Página Conciliación
+                                     <input type="checkbox" name="paginas" id="pconc"> Página Conciliación
                                  </label>
                              </div>
                          </div>

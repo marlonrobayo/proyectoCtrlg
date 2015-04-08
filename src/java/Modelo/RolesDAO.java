@@ -110,16 +110,16 @@ public class RolesDAO {
     public String crearRegistroRol(RolesDTO newRol) throws SQLException, MyErrorExcepcion {
          cnn = PoolConection.getInstance();
         String salida = "";
-      String sql = "INSERT INTO roles (idroles, NombreRol) VALUES (?,?)";
+      String sql = "INSERT INTO roles (NombreRol) VALUES (?)";
+      String sql2 = "INSERT INTO rolespaginaspermisos (tbidroles,tbidPaginas) VALUES (?,?)";
         try {
             pstmt1 = cnn.prepareStatement(sql);
-            pstmt1.setInt(1, newRol.getRolid());
-            pstmt1.setString(2, newRol.getNamerol());
+            pstmt1.setString(1, newRol.getNamerol());
            
             if (pstmt1.executeUpdate() > 0) {
-                salida = "Informacion del Proceso: Se creo el Rol con exito.";
+                salida = "Se creo el Rol con exito.";
             } else {
-                salida = "Informacion del Proceso: Se produjo un error al crear el registro!!";
+                salida = "Se produjo un error al crear el registro!!";
             }
         } catch (SQLException sqle) {
             salida = ("Se produjo un error " + sqle.getMessage());

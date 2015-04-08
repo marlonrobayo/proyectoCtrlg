@@ -3,7 +3,7 @@
 <html>
     <head>
          <link rel="shortcut icon" href="Logo.ico" />
-        <title>Control de Gestión Financiera</title>
+        <title>Financial Management Control Call Center</title>
         <script src="js/jquery.js"></script>
         <script src="js/jquery.validate.js"></script>
         <link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
@@ -29,7 +29,7 @@
                 </div>
             </figcaption>
             <div id= "logeo2">
-                <h2> Control De Gestión Financiera Para Ingresos</h2>
+               <h2>Financial Control For Income</h2>
             </div>
         </header>
         <div id= "contenido">
@@ -50,47 +50,45 @@
          <div class="row">
              <div class="col-md-9">
             <nav> 
-                <a href="#" onclick="myFunction();">Inicio</a> 
-                <a href="javascript:Carga('mision.jsp','mainContent')">Misión</a>
-                <a href="javascript:Carga('vision.jsp','mainContent')">Visión</a>
-                <div class="text-center"><img src="imagenes/BanderaUSA.png" alt="Ingles Pagina" height="25" width="25" title="Ingles" onclick="inglesir();"/></div>
+                <a href="#" onclick="myFunction();">Initiation</a> 
+                <a href="javascript:Carga('mision.jsp','mainContent')">Mision</a>
+                <a href="javascript:Carga('vision.jsp','mainContent')">Vision</a>
             </nav>
-                
                  <div class="spacio"></div>
                  <div id="image_index">
                   <div id="mainContent">   
                      <dl>
-                         <dt><p class="fontWi2 text-success"> Toma el control y respira tranquilo,</p> </dt>
-                      <dd>Ahora puedes controlar, mejorar la toma decisiones y hacer gestión integral de negocios y tus ingresos con el sistema de gestión de información CTRL+G . 
-                     Sus módulos de Ítems Facturables y Metas te permiten tener un seguimiento detallado de cada uno de los indicadores. <br>Con su generador de reportes tienes información actualizada y confiable 
-                     asegurándote a tomar decisiones profesionalmente. Además recibes alertas sobre puntos de ataque crítico en tu correo para cuidar tus ingresos.</dd>
+                         <dt><p class="fontWi2 text-success"> Take control and breathe easy,</p> </dt>
+                         <dd>Now you can control, improve decision making and make comprehensive management business and your income with information management system CTRL + G.
+Its modules Billable Items and Goals allow you to have a detailed discussion of each of the indicators tracking. <br> 
+With its report generator making sure you have updated and reliable information to make decisions professionally. In addition you receive alerts on critical attack points in your mailbox to look your income.</dd> 
                     </dl> 
                  </div>
                  </div>                        
              </div>
          <div class="col-md-3">
              <div id="Login">
-                 <fieldset class="text-primary h3">Ingresar al Sistema</fieldset>
+                 <fieldset class="text-primary h3">Enter the System</fieldset>
              <form id="FormularioRgistro" role="form" action="Login">
                  <div class="form-group">
-                     <label for="nommail">Usuario</label>
-                     <input type="text" class="form-control" id="nommail" name="nommail" placeholder="Ingrese Usuario" required="">
+                     <label for="nommail">User</label>
+                     <input type="text" class="form-control" id="nommail" name="nommail" placeholder="Enter User" required="">
                  </div>
                  <div class="form-group">
-                     <label for="clave">Contraseña</label>
-                     <input type="password" class="form-control" id="clave" name="clave" placeholder="Su contraseña" required="">
+                     <label for="clave">Password</label>
+                     <input type="password" class="form-control" id="clave" name="clave" placeholder="Your Password" required="">
                  </div>                   
                  <input type="hidden" name="UserIn" id="UserIn" value=""/>
-                 <button type="submit" class="btn btn-warning" name="ValidUser" id="ValidUser">Ingresar</button>
+                 <button type="submit" class="btn btn-warning" name="ValidUser" id="ValidUser">Sign In</button>
              </form>
                      <br>
-                <div class="text-right"><a href= "solicitaracceso.jsp" class="fontWi">Solicitar acceso</a> </div>
+                <div class="text-right"><a href= "solicitaracceso.jsp" class="fontWi">Request Access</a> </div>
                 <%   if (request.getParameter("sal") != null) { %>
                 <div id="bg-info"> 
                 <%  out.print(request.getParameter("sal"));  %>
              </div>
                 <p></p>
-                <p><a href= "recuperaclave.jsp" class="fontWi">Recuperar contraseña</a> </p>
+                <p><a href= "recuperaclave.jsp" class="fontWi">Recover Password</a> </p>
                 <%}
                 %>
          </div>
@@ -98,7 +96,7 @@
          </div>
             <div class="spacio"></div>
     </div>
-    <footer>©Año 2015 Ctrl+G - PROYECTO FORMATIVO</footer>
+    <footer>©Year 2015 Ctrl+G - TRAINING PROJECT</footer>
   <script src="js/engine/wowslider.js" type="text/javascript"></script>
  <script src="js/engine/script.js" type="text/javascript"></script>
  <script src="js/ajax.js" type="text/javascript"></script>
@@ -116,11 +114,6 @@
     <script>
       function myFunction() {
           location.href = "index.jsp";
-      }
-    </script>
-    <script>
-      function inglesir() {
-          location.href = "indexen.jsp";
       }
     </script>
  </body>

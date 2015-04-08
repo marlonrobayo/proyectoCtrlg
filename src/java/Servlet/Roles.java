@@ -48,10 +48,23 @@ public class Roles extends HttpServlet {
                 RolesDAO rolCrear = new RolesDAO();
                 RolesDTO rolReg = new RolesDTO();
                  
-                rolReg.setRolid(Integer.parseInt(request.getParameter("idrol1")));
-                rolReg.setNamerol(request.getParameter("namerol"));
-                
-                //Luego de tener el objeto dto creado y "cargado" con los datos del formulario, creamos el DAO
+                String[] pag = request.getParameterValues("paginas");
+                    if(pag!=null && pag.length>0) {
+                        for(int i=0; i<pag.length; i++) {
+                         if (pag[i]== "pu"){int idpagina1= 1;}
+                         else if (pag[i]== "pc"){int idpagina2= 2;}
+                         else if (pag[i]== "pce"){int idpagina3= 3;}
+                         else if (pag[i]== "pif"){int idpagina4= 4;}
+                         else if (pag[i]== "pmr"){int idpagina5= 5;}
+                         else if (pag[i]== "pconc"){int idpagina6= 6;}
+                         else {  }
+                        }                    
+                    }                
+                rolReg.setNamerol(request.getParameter("namerol")); 
+                    
+                    
+                    
+//Luego de tener el objeto dto creado y "cargado" con los datos del formulario, creamos el DAO
                 // y llamamos el metodo para registrar un nuevo profesor. recordar que ese metodo devuelve una cadena
                 String mensaje =(rolCrear.crearRegistroRol(rolReg));
                 

@@ -135,18 +135,17 @@ public class PersonasDAO {
             rs1 = pstmt1.executeQuery();
             rs1.toString();
             if (rs1.absolute(1)== true){
-                salida = "El usuario ya existe en el sistema con la cedula:"+ cedula;  
+                salida = "El usuario ya existe en el sistema con la cedula No.:"+ cedula;  
             } else{
                 
-            String sql = "INSERT INTO personas (cedula, nombreapellido, estado, correo, clave, celular, aprobado, fecharegistro) VALUES (?,?,?,?,md5(?),?,?,?)";            
+            String sql = "INSERT INTO personas (cedula, nombreapellido, estado, correo, clave, celular, fecharegistro) VALUES (?,?,?,?,md5(?),?,?)";            
             pstmt = cnn.prepareStatement(sql);
             pstmt.setString(1, newuser.getCc());
             pstmt.setString(2, newuser.getNombreCompleto());
             pstmt.setInt(3, newuser.getEstadouser());
             pstmt.setString(4, newuser.getLoginuser());
             pstmt.setString(5, newuser.getContrasena());
-            pstmt.setInt(6, newuser.getCelu());
-            pstmt.setInt(7, newuser.getAproba());
+            pstmt.setInt(6, newuser.getCelu());          
             pstmt.setString(8, newuser.getFehcaIn());
             
             
@@ -292,5 +291,70 @@ public class PersonasDAO {
         return salida;
     }
  
+   public String crearRegistroSolicitudP(PersonasDTO newuser, String cedula) throws SQLException, MyErrorExcepcion {
+        
+        String salida = "";
+        cnn = PoolConection.getInstance();
+        try {
+            String sql1 = "SELECT Cedula FROM personas WHERE Cedula=?";
+            pstmt1 = cnn.prepareStatement(sql1);
+            pstmt1.setString(1, cedula);
+            rs1 = pstmt1.executeQuery();
+            rs1.toString();
+            if (rs1.absolute(1)== true){
+                salida = "OKUSER";
+            } else{
+                
+            String sql = "INSERT INTO personas (cedula, nombreapellido, estado, correo, clave, celular, fecharegistro) VALUES (?,?,?,?,md5(?),?,?)";            
+            pstmt = cnn.prepareStatement(sql);
+            pstmt.setString(1, newuser.getCc());
+            pstmt.setString(2, newuser.getNombreCompleto());
+            pstmt.setInt(3, newuser.getEstadouser());
+            pstmt.setString(4, newuser.getLoginuser());
+            pstmt.setString(5, newuser.getContrasena());
+            pstmt.setInt(6, newuser.getCelu());          
+            pstmt.setString(7, newuser.getFehcaIn());
+            
+            
+            if (pstmt.executeUpdate() > 0) {
+                salida += "La solicitud se registro con exito, ";
+                pstmt = null;
+            } else {
+                salida += "Se produjo un error al crear el usuario!!";
+                pstmt = null;
+            }
+            String sql2 = "INSERT INTO personasroles (tbidPersona, tbidroles) VALUES (?,?)";            
+            pstmt = cnn.prepareStatement(sql2);
+            pstmt.setString(1, cedula );
+            pstmt.setInt(2, newuser.getRoluserint());
+                        
+            if (pstmt.executeUpdate() > 0) {
+                salida += "recibira un mensaje con sus datos de ingreso ";
+            } else {
+                salida += "y no se pudo vincular el Rol";
+            }
+            
+            }
+        } catch (SQLException sqle) {
+            salida = ("Se produjo un error " + sqle.getMessage());
+        } finally {
+           if (rs != null) 
+                 try { rs.close();} 
+             catch (SQLException ignore) {
+             throw new MyErrorExcepcion("error al close.. " + ignore.getSQLState());
+             }
+             if (pstmt != null) 
+                 try { pstmt.close();} 
+             catch (SQLException ignore) {
+             throw new MyErrorExcepcion("error al close.. " + ignore.getSQLState());
+             }
+             if (cnn != null) 
+                 try { PoolConection.closeConnection();} 
+             catch (Exception ignore) {
+             throw new MyErrorExcepcion("error al close.. " + ignore.getMessage());
+             }
+        }
+       return salida;
+    }
    
 }

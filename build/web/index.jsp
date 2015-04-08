@@ -3,7 +3,7 @@
 <html>
     <head>
          <link rel="shortcut icon" href="Logo.ico" />
-        <title>Control de gestión financiera de Call Center</title>
+        <title>Control de Gestión Financiera</title>
         <script src="js/jquery.js"></script>
         <script src="js/jquery.validate.js"></script>
         <link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
@@ -53,7 +53,9 @@
                 <a href="#" onclick="myFunction();">Inicio</a> 
                 <a href="javascript:Carga('mision.jsp','mainContent')">Misión</a>
                 <a href="javascript:Carga('vision.jsp','mainContent')">Visión</a>
+                <div class="text-center"><img src="imagenes/BanderaUSA.png" alt="Ingles Pagina" height="25" width="25" title="Ingles" onclick="inglesir();"/></div>
             </nav>
+                
                  <div class="spacio"></div>
                  <div id="image_index">
                   <div id="mainContent">   
@@ -114,6 +116,11 @@
     <script>
       function myFunction() {
           location.href = "index.jsp";
+      }
+    </script>
+    <script>
+      function inglesir() {
+          location.href = "indexen.jsp";
       }
     </script>
  </body>

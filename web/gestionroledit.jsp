@@ -45,7 +45,7 @@
 </script>
 <script>
       function myFunction() {
-          window.open("gestionrol.jsp", "_blank", "toolbar=no, scrollbars=no, resizable=no, top=20, left=250, width=400, height=600");
+          window.open("gestionrol.jsp", "_blank", "toolbar=no, scrollbars=no, resizable=no, top=20, left=250, width=400, height=550");
       }
 </script>
 <script>
@@ -83,8 +83,10 @@
   <div class="row"> 
       <div class="col-sm-4"></div>
       <div class="col-md-6"><nav id="submenu"> <a href="gestionuseredit.jsp">Voler</a> 
-              <a href="#" onclick="myFunction()">Crear un nuevo rol</a></nav>
-     </div>      
+              <a href="#" onclick="myFunction()">Crear un nuevo rol</a>
+              <a href="gestionroledit.jsp">Recargar</a>
+          </nav>
+      </div>    
   <div class="col-md-2"></div>
   </div>  
 <hr> 
@@ -110,7 +112,7 @@
                                 <td><%=roles.getRolid()%></td>
                                 <td><%=roles.getNamerol() %></td>                                
                                 <td><div style="display: inline-block;">
-                                        <a href="#" onclick="myFunction2(<%=roles.getRolid()%>)" class="btn btn-default btn-xs btn btn-success" style="text-decoration:none;">Editar</a>
+                                        <a href="#" onclick="myFunction2(<%=roles.getRolid()%>)" class="btn btn-default btn-xs btn btn-success" style="text-decoration:none;">Editar/Permisos</a>
                                     </div></td>
                                     <td><div style="display: inline-block" ><button href="#" onclick="confirmar(<%=roles.getRolid() %>);" class="btn btn-default btn-xs btn btn-warning" style="padding-left:10px; text-decoration:none;">Eliminar</button>
                                     </div></td>    
