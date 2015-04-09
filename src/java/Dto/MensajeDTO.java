@@ -23,7 +23,7 @@ public class MensajeDTO {
         this.emailOrigen = emailOrigen;
         this.emailAsunto = emailAsunto;
         this.emailMensaje = emailMensaje;
-        this.emailpass = "Terry2048*+";
+        this.emailpass = "ctrlg2015+";
    
     }
     /**

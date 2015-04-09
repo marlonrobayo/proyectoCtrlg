@@ -291,19 +291,32 @@ public class PersonasDAO {
         return salida;
     }
  
-   public String crearRegistroSolicitudP(PersonasDTO newuser, String cedula) throws SQLException, MyErrorExcepcion {
+   public String crearRegistroSolicitudP(PersonasDTO newuser, String cedula, String correoIn) throws SQLException, MyErrorExcepcion {
         
         String salida = "";
         cnn = PoolConection.getInstance();
         try {
             String sql1 = "SELECT Cedula FROM personas WHERE Cedula=?";
+            String sql3 = "SELECT correo FROM personas WHERE correo=?";
             pstmt1 = cnn.prepareStatement(sql1);
             pstmt1.setString(1, cedula);
             rs1 = pstmt1.executeQuery();
             rs1.toString();
-            if (rs1.absolute(1)== true){
+            pstmt = cnn.prepareStatement(sql3);
+            pstmt.setString(1, correoIn);
+            rs = pstmt.executeQuery();
+            rs.toString();
+                        
+            if (rs1.absolute(1)== true)
+            {
                 salida = "OKUSER";
-            } else{
+            }
+            else if (rs.absolute(1)== true){
+                salida = "OKUSER";
+                rs = null;
+                pstmt= null;
+                }     
+             else{
                 
             String sql = "INSERT INTO personas (cedula, nombreapellido, estado, correo, clave, celular, fecharegistro) VALUES (?,?,?,?,md5(?),?,?)";            
             pstmt = cnn.prepareStatement(sql);

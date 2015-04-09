@@ -1,6 +1,11 @@
 <%@page import="Dto.RolesDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.RolesDAO"%><%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% response.addHeader("Expires:","Mon, 01 Jan 2001 00:00:00 GMT");
+response.addHeader("Pragma","no-cache");
+response.addHeader("Cache-Control","no-cache, must-revalidate");
+response.addHeader("Cache-Control","post-check=0, pre-check=0");
+response.addHeader("Cache-Control","private");%>
 <!doctype html>
 <html>
     <head>

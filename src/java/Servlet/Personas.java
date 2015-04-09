@@ -145,7 +145,8 @@ public class Personas extends HttpServlet {
                 PersonasDTO personaReg = new PersonasDTO();
                 
                 String idUserTrae = request.getParameter("cc");
-                        
+                String emailIn = request.getParameter("nommail");
+                
                 personaReg.setCc(request.getParameter("cc"));
                 personaReg.setNombreCompleto(request.getParameter("name1"));
                 personaReg.setEstadouser(estadoDefault);
@@ -155,24 +156,24 @@ public class Personas extends HttpServlet {
                 personaReg.setFehcaIn(date);                
                 personaReg.setRoluserint(estadoRolNum);
                 
-                mensaje = (personaCrear.crearRegistroSolicitudP(personaReg, idUserTrae));             
+                mensaje = (personaCrear.crearRegistroSolicitudP(personaReg, idUserTrae, emailIn ));             
                 
                 if (mensaje != "OKUSER"){
                 
-                String emailFrom = ("henry.rodriguez@energiaintegralandina.com");
+                String emailFrom = ("info@ctrlg.co");
                 String emailTo = request.getParameter("nommail");
                 String asunto = ("Informacion de Registro");
-                String textmensaje = ("Gracias por registrarse en CtrlG, sus datos de ingreso son Usuario: "+ emailTo + ", Su Contraseña:"+ contrasena);
+                String textmensaje = ("Gracias por registrarse en CtrlG, sus datos de ingreso son Usuario: "+ emailTo + ", Su Contraseña: "+ contrasena);
                 EmailDAO msjDAO = new EmailDAO();
                 MensajeDTO msjDTO = new MensajeDTO(emailTo, emailFrom, asunto, textmensaje);
                                       
                 Email envioEmail = new Email("smtpout.secureserver.net", "25", msjDTO);
                 mensajeRTA = envioEmail.enviarEmail(asunto, textmensaje);
                 msjDAO.crearRegistroMail(msjDTO);
-                response.sendRedirect("solicitaracceso.jsp?msg="+ mensaje +",  "+ mensajeRTA );
+                response.sendRedirect("solicitaracceso.jsp?msg="+ mensaje +" "+ mensajeRTA );
                 }
                 else {
-                mensaje ="El usuario ya existe con el numero de identificacion ingresado!!";    
+                mensaje ="El usuario ya existe con el No. de identificacion ingresado o el correo ya esta registrado";    
                 response.sendRedirect("solicitaracceso.jsp?msg="+ mensaje );  
                 }      
                 

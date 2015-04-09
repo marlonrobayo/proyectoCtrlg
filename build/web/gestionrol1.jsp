@@ -25,6 +25,7 @@
         <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script src="js/paging.js" type="text/javascript"></script>
         <script src="js/jquery-ui.js" type="text/javascript"></script>
+        <title>Modificar Rol</title>
     </head>
     <body>
                 <%     HttpSession sesion = request.getSession(false);
@@ -122,7 +123,7 @@
                      </div>
                    
                     <input type="hidden" name="updateRol" id="updatePersona" value="" />
-                    <button type="submit" class="btn btn-default" href=".alert-success" data-target="#myModal" tabindex="7" name="btnUpdateRol" >Guardar Cambios</button>
+                    <button type="submit" class="btn btn-info" href=".alert-success" data-target="#myModal" tabindex="7" name="btnUpdateRol"  >Guardar Cambios</button>
                 </form><br>
               </div>
              </div>

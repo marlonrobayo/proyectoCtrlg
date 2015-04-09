@@ -80,12 +80,14 @@
                    
 <div id="contenido"> 
      <h4>Administración de Roles y Permisos</h4>
+     <br>
   <div class="row"> 
       <div class="col-sm-4"></div>
-      <div class="col-md-6"><nav id="submenu"> <a href="gestionuseredit.jsp">Voler</a> 
-              <a href="#" onclick="myFunction()">Crear un nuevo rol</a>
-              <a href="gestionroledit.jsp">Recargar</a>
-          </nav>
+      <div class="col-md-6">
+              <a href="gestionuseredit.jsp" class="btn btn-info">Volver</a> 
+              <a href="#" onclick="myFunction()" class="btn btn-info">Crear un nuevo rol</a>
+              <a href="gestionroledit.jsp" class="btn btn-info">Recargar</a>
+          
       </div>    
   <div class="col-md-2"></div>
   </div>  

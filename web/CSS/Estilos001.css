@@ -116,6 +116,20 @@ nav a:hover {
 
 }
 
+#nav1 {
+    
+    width: 800px;
+    height:auto;
+    float: left;
+    padding-left: 5%;
+    padding-right: 5%;   
+    text-align: center;
+}
+
+
+
+
+
 #contenido {	
 
     overflow: hidden;
@@ -162,6 +176,15 @@ nav a:hover {
 }
 #submenu a:hover{
     background-color:rgb(255,121,0);
+}
+
+#submenu1 {
+
+    margin-top:20px;
+    width: auto;	
+    margin-left: 0px;
+
+
 }
 
 #logeo {

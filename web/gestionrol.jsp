@@ -12,6 +12,7 @@
         <script src="js/jquery.validate.js"></script>
         <link rel="stylesheet" type="text/css" href="CSS/Estilos001.css">
         <script src="js/paging.js" type="text/javascript"></script>
+        <title>Crear Rol</title>
     </head>
     <body>        
            <%
@@ -44,7 +45,7 @@
                          <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                                  <label>
-                                     <input type="checkbox" name="paginas" id="pu"> Página Usuario
+                                     <input type="checkbox" name="paginas" id="pu" value="1" > Página Usuario
                                  </label>
                              </div>
                          </div>
@@ -53,7 +54,7 @@
                          <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                                  <label>
-                                     <input type="checkbox" name="paginas" id="pc"> Página Clientes
+                                     <input type="checkbox" name="paginas" id="pc"  value="2"> Página Clientes
                                  </label>
                              </div>
                          </div>
@@ -62,7 +63,7 @@
                          <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                                  <label>
-                                     <input type="checkbox" name="paginas" id="pce" > Página CeCos
+                                     <input type="checkbox" name="paginas" id="pce"  value="3"> Página CeCos
                                  </label>
                              </div>
                          </div>
@@ -71,7 +72,7 @@
                          <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                                  <label>
-                                     <input type="checkbox" name="paginas" id="pif"> Item's Facturables
+                                     <input type="checkbox" name="paginas" id="pif"  value="4"> Item's Facturables
                                  </label>
                              </div>
                          </div>
@@ -80,7 +81,7 @@
                          <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                                  <label>
-                                     <input type="checkbox" name="paginas" id="pmr"> Metas y Resultados
+                                     <input type="checkbox" name="paginas" id="pmr"  value="5"> Metas y Resultados
                                  </label>
                              </div>
                          </div>
@@ -89,14 +90,14 @@
                          <div class="col-sm-offset-2 col-sm-10">
                              <div class="checkbox">
                                  <label>
-                                     <input type="checkbox" name="paginas" id="pconc"> Página Conciliación
+                                     <input type="checkbox" name="paginas" id="pconc"  value="6"> Página Conciliación
                                  </label>
                              </div>
                          </div>
                      </div>
                       
                 <input type="hidden" name="newRol" id="NewClient" value="" />
-                <button type="submit" class="btn btn-primary btn-info" href=".alert-success" data-target="#myModal" tabindex="7" name="registraRol" >Registrar nuevo Rol</button>
+                <button type="submit" class="btn btn-info" href=".alert-success" data-target="#myModal" tabindex="7" name="registraRol" >Registrar nuevo Rol</button>
                 </form><br>
               
     </div>

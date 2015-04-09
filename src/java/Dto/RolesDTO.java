@@ -13,6 +13,7 @@ public class RolesDTO {
     
      private int rolid;
      private String namerol;
+     private int idpagpermi;
 
     public RolesDTO() {
     }
@@ -43,6 +44,20 @@ public class RolesDTO {
      */
     public void setNamerol(String namerol) {
         this.namerol = namerol;
+    }
+
+    /**
+     * @return the idpagpermi
+     */
+    public int getIdpagpermi() {
+        return idpagpermi;
+    }
+
+    /**
+     * @param idpagpermi the idpagpermi to set
+     */
+    public void setIdpagpermi(int idpagpermi) {
+        this.idpagpermi = idpagpermi;
     }
      
      

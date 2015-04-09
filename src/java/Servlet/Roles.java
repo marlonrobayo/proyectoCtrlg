@@ -48,18 +48,14 @@ public class Roles extends HttpServlet {
                 RolesDAO rolCrear = new RolesDAO();
                 RolesDTO rolReg = new RolesDTO();
                  
-                String[] pag = request.getParameterValues("paginas");
-                    if(pag!=null && pag.length>0) {
-                        for(int i=0; i<pag.length; i++) {
-                         if (pag[i]== "pu"){int idpagina1= 1;}
-                         else if (pag[i]== "pc"){int idpagina2= 2;}
-                         else if (pag[i]== "pce"){int idpagina3= 3;}
-                         else if (pag[i]== "pif"){int idpagina4= 4;}
-                         else if (pag[i]== "pmr"){int idpagina5= 5;}
-                         else if (pag[i]== "pconc"){int idpagina6= 6;}
-                         else {  }
-                        }                    
-                    }                
+                    
+                String[] categorias = request.getParameterValues("paginas");
+                    if(categorias!=null && categorias.length>0) {
+                       for(int i=1; i<categorias.length; i++) {
+                          String idpag= (categorias[i]);
+                           }
+                        }
+                
                 rolReg.setNamerol(request.getParameter("namerol")); 
                     
                     

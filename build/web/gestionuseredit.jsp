@@ -88,19 +88,24 @@
             </div><% } %>
     
      <h4>Administración de Usuarios</h4>
-      <div ><nav id="submenu">
-              <a href="#" onclick="myFunction()">Crear nuevo usuario</a>
-                <a href="gestionroledit.jsp" >Administrar roles</a></nav></div>
+     <br><br>
+     <div class="row">
+         <div class="col-md-1"></div>
+          <div class="col-md-5">
+                <a href="#" onclick="myFunction()" class="btn btn-info">Crear nuevo usuario</a>
+                <a href="gestionroledit.jsp" class="btn btn-info" >Administrar roles</a>
+         </div> 
+    <div class="col-md-6">
    <form class="form-inline" role="form" action="Personas" >
      <div class="form-group">
-     <label>Por ID Persona:</label>
-       
+     <label>Buscar Por ID Persona:</label>       
        <input type="text" class="form-control" id="idtextbuscar" placeholder="En blanco carga todo" name="idtextbuscar" >
        <input type="hidden" name="CargaSelect" value="">
        <button type="submit" class="btn btn-primary" name="listarId">Buscar / Carga todo</button>
      
    </div> 
    </form>
+           </div>      </div>
  <hr>   
  <div class="row"> 
   <div class="col-md-12">   

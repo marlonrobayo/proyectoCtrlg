@@ -24,7 +24,9 @@ public class RolesDAO {
     PreparedStatement pstmt1 = null;
     ResultSet rs1 = null;
     Connection cnn;
-
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    
     public RolesDAO() {
             }
      
@@ -108,10 +110,11 @@ public class RolesDAO {
     }
     
     public String crearRegistroRol(RolesDTO newRol) throws SQLException, MyErrorExcepcion {
-         cnn = PoolConection.getInstance();
+        cnn = PoolConection.getInstance();
         String salida = "";
+        int idultimo=5;
       String sql = "INSERT INTO roles (NombreRol) VALUES (?)";
-      String sql2 = "INSERT INTO rolespaginaspermisos (tbidroles,tbidPaginas) VALUES (?,?)";
+     
         try {
             pstmt1 = cnn.prepareStatement(sql);
             pstmt1.setString(1, newRol.getNamerol());
@@ -121,6 +124,25 @@ public class RolesDAO {
             } else {
                 salida = "Se produjo un error al crear el registro!!";
             }
+            
+            String sql1= "SELECT MAX(idroles) AS id FROM roles";
+            pstmt = cnn.prepareStatement(sql1);
+            rs = pstmt.executeQuery();
+            if (rs != null) {                      
+                    idultimo=(rs.getInt("id"));                   
+                }                                
+            String sql2 = "INSERT INTO rolespaginaspermisos (tbidroles,tbidPaginas) VALUES (?,?)";      
+            pstmt = cnn.prepareStatement(sql2);
+            
+            pstmt.setInt(1, idultimo );
+            pstmt.setInt(2, newRol.getIdpagpermi());
+                        
+            if (pstmt.executeUpdate() > 0) {
+                salida += "y permisos asignados correctamente";
+            } else {
+                salida += "y no se pudo vincular el Rol";
+            }
+        
         } catch (SQLException sqle) {
             salida = ("Se produjo un error " + sqle.getMessage());
         } finally {
